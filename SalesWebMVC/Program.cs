@@ -1,5 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
+//app.Services.CreateScope().ServiceProvider.GetRequiredService<SeedingService>().Seed();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
