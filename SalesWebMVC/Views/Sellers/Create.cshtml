@@ -1,4 +1,4 @@
-﻿@model SalesWebMVC.Models.Seller
+﻿@model SalesWebMVC.Models.ViewModels.SellerFormViewModel
 @{
     ViewData["Title"] = "Create";
 }
@@ -11,20 +11,24 @@
     <div class="col-md-6">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <label asp-for="Seller.Name" class="control-label">Name</label>
+                <input asp-for="Seller.Name" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label">E-mail</label>
-                <input asp-for="Email" class="form-control" />
+                <label asp-for="Seller.Email" class="control-label">E-mail</label>
+                <input asp-for="Seller.Email" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Birthdate" class="control-label"></label>
-                <input asp-for="Birthdate" class="form-control" />
+                <label asp-for="Seller.Birthdate" class="control-label">Date of Birth</label>
+                <input asp-for="Seller.Birthdate" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Salary" class="control-label"></label>
-                <input asp-for="Salary" class="form-control" />
+                <label asp-for="Seller.DepartmentId" class="control-label">Department</label>
+                <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments,"Id","Name"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Seller.Salary" class="control-label">Base Salary</label>
+                <input asp-for="Seller.Salary" class="form-control" />
             </div>
             <hr />
             <div class="form-group">
